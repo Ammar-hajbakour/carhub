@@ -1,0 +1,11 @@
+<button
+  [disabled]="false"
+  [type]="type || 'button'"
+  class="custom-btn"
+  [class]="styles"
+  (click)="onClick()"
+>
+  <span class="flex-1 font-semibold" >
+    {{ title }}
+  </span>
+</button>

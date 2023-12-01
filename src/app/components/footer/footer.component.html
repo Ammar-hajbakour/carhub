@@ -1,0 +1,31 @@
+<footer class="flex flex-col dark:bg-stone-700 text-black-100 dark:text-white mt-10 border-t border-stone-100 dark:border-stone-600">
+  <div
+    class="flex w-full max-w-[1440px] mx-auto justify-between flex-wrap max-md:flex-col md:gap-16 gap-6 sm:px-16 px-6 py-10">
+    <div class="w-fit flex flex-col justify-start items-start gap-2">
+      <img class="object-contain dark:invert" src="assets/images/logo.svg" alt="logo" width="124" height="32">
+      <p class="text-xs text-stone-500  w-full text-right">
+        All rights reserved © <br /> CarHub {{fullYear}}
+      </p>
+    </div>
+    <div class="footer__links">
+      @for(link of links; track link.title){
+      <div class="footer__link">
+        <h3 class="font-bold">{{link.title}}</h3>
+        @for(item of link.links; track item){
+        <a href="#" class=" text-stone-500 dark:text-white dark:hover:text-yellow hover:text-primary-blue">{{item.title}}</a>
+        }
+      </div>
+      }
+    </div>
+  </div>
+  <div class="mt-10 border-t border-stone-100 dark:border-stone-600">
+    <div class="flex justify-between flex-wrap w-full max-w-[1440px] mx-auto  sm:px-16 px-6 py-4">
+      <p class="text-sm">©{{fullYear}} CarHub. All Rights Reserved</p>
+      <div class="footer__copyrights-link">
+      <a href="#" class="text-sm text-stone-500 dark:text-white dark:hover:text-yellow hover:text-primary-blue">Privacy Policy</a>
+      <a href="#" class="text-sm text-stone-500 dark:text-white dark:hover:text-yellow hover:text-primary-blue">Terms of Use</a>
+    </div>
+    </div>
+  </div>
+
+</footer>

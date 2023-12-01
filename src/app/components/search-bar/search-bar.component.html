@@ -1,0 +1,21 @@
+<form class="home__filters" #searchForm ="ngForm" (ngSubmit)="onSubmit(searchForm)">
+  <div class="flex flex-wrap gap-4">
+    <div class="searchbar__item">
+      <app-filter [value]="manufacturer()" [type]="'manufacturer'" (filterEvent)="manufacturer.set($event)" />
+    </div>
+    <div class="searchbar__item">
+      <app-filter [value]="model()" [type]="'model'" (filterEvent)="model.set($event)"/>
+    </div>
+  </div>
+  <div class="flex flex-wrap gap-4">
+    <div class="searchbar__item w-24">
+      <app-filter [value]="fuel()" [type]="'fuel'" (filterEvent)="fuel.set($event)"/>
+    </div>
+    <div class="searchbar__item w-24">
+      <app-filter [hasUnset]="false" [value]="year()" [type]="'year'" (filterEvent)="year.set($event)" />
+    </div>
+    <button mat-fab color="primary" type="submit" class="searchbar__button">
+      <mat-icon>search</mat-icon>
+    </button>
+  </div>
+</form>

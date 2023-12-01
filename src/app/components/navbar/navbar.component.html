@@ -1,0 +1,11 @@
+<header id="navbar" class="w-full fixed top-0 left-0 z-10 max-[460px]:static bg-white dark:bg-stone-700 shadow-md">
+  <nav class="max-w-[1440px] mx-auto flex max-[460px]:items-start justify-between items-center gap-4 sm:px-16 px-6 py-4">
+    <a href="#" class="flex justify-center items-center">
+      <img class="object-contain dark:invert" src="assets/images/logo.svg" alt="logo" width="124" height="32">
+    </a>
+    <div class="flex max-[460px]:hidden items-center gap-4">
+      <app-custom-button [title]="'About'" [styles]="'bg-primary-blue dark:bg-yellow dark:text-stone-700 text-white rounded-full'" (onClickEvent)="handleScroll('about')" />
+      <app-custom-button [title]="'Discover'" [styles]="'bg-primary-blue dark:bg-yellow dark:text-stone-700 text-white  rounded-full'" (onClickEvent)="handleScroll('discover')"/>
+    </div>
+  </nav>
+</header>

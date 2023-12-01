@@ -1,0 +1,21 @@
+<div id="about" class="hero">
+  <div class="flex-1 pt-36 max-[460px]:pt-12 xl:pt-0 padding-x">
+    <h1 class="hero__title">
+      Find, book, rent <br />— all in one place!
+    </h1>
+    <p class="hero__subtitle">
+      Streamline your car rental experience with our effortless booking process.
+    </p>
+    <app-custom-button
+      (onClickEvent)="handleScroll('discover')" 
+      [title]="'Explore Cars'" 
+      [styles]="'bg-primary-blue text-white rounded-full mt-10'" 
+    />
+  </div>
+  <div class="hero__image-container">
+    <div class="hero__image max-xl:-mt-20">
+      <img class="object-contain" ngSrc="assets/images/hero.png" alt="hero image" fill priority>
+    </div>
+    <div class="hero__image-overlay"></div>
+  </div>
+</div>

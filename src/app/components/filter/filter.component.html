@@ -1,0 +1,16 @@
+<mat-form-field appearance="outline" class="max-w-[100%] form-field ">
+  <mat-label>{{type | titlecase}}</mat-label>
+  <input
+  class="filter__input"
+    type="text" [placeholder]="options.length > 0 ? 'Pick One':''" [attr.aria-label]="type" matInput
+    [formControl]="formControl" [matAutocomplete]="auto">
+  <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+    @if(canUnset() && type !== 'model') {
+    <mat-option>Unset</mat-option>
+    }
+    @for (option of filteredOptions$ | async; track option) {
+    <mat-option [value]="option">{{option}}</mat-option>
+    }
+  </mat-autocomplete>
+
+</mat-form-field>

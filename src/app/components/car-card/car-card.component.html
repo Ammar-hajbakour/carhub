@@ -1,0 +1,42 @@
+<div class="car-card group">
+  <div class="car-card__content">
+    <h2 class="car-card__content-title min-h-[50px]">{{car.make}} {{car.model}}</h2>
+  </div>
+  <p class="car-card__price">
+    <span class="car-card__price-dollar">
+      $
+    </span> 
+    {{carRent}}   
+    <span class="car-card__price-day">
+      / day
+    </span>
+  </p>
+  <div class="car-card__image">
+    <img class="object-contain" [src]="dataService.generateCarImageUrl(car)" alt="hero image">
+  </div>
+  <div class="relative flex w-full mt-2">
+    <div class="car-card__icon-container ">
+      <div class="car-card__icon">
+        <img ngSrc="assets/images/steering-wheel.svg" alt="steering wheel" width="20" height="20">
+        <p class="text-[12px]">
+          {{car.transmission === 'automatic' ? 'Auto' : 'Manual'}}
+        </p>
+      </div>
+      <div class="car-card__icon">
+        <img ngSrc="assets/images/tire.svg" alt="tire" width="20" height="20">
+        <p class="text-[12px]">
+          {{car.drive | uppercase}}
+        </p>
+      </div>
+      <div class="car-card__icon">
+        <img ngSrc="assets/images/gas.svg" alt="gas" width="20" height="20">
+        <p class="text-[12px]">
+          {{car.city_mpg}} MPG
+        </p>
+      </div>
+    </div>
+    <div class="car-card__btn-container">
+      <app-custom-button [title]="'View Details'" [styles]="'w-full bg-primary-blue dark:bg-yellow dark:text-stone-700 text-white rounded-full'" (onClickEvent)="viewDetails(car)"/>
+    </div>
+  </div>
+</div>
